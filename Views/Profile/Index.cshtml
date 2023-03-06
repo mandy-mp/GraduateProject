@@ -1,0 +1,32 @@
+﻿@model ProfileViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h2>Profile Details</h2>
+    <table class="table table-striped">
+    <tr>
+        <th>Name:</th> 
+        <td><code>@Model.Name</code></td>
+    </tr>
+    <tr>
+        <th>Surname:</th>
+        <td><code>@Model.Surname</code></td>
+   
+    <tr>
+        <th>DOB:</th> 
+        <td><code>@Model.DOB</code></td>
+    </tr>
+    <tr>
+        <th>Age:</th> 
+        <td><code>@Model.Age</code></td>
+    </tr>
+    <tr>
+        <th>Country:</th> 
+        <td><code>@Model.Country</code></td>
+    </tr>
+    <tr>
+        <th>City:</th> 
+        <td><code>@Model.City</code></td>
+    </tr>
+</table>
