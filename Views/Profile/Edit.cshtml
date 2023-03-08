@@ -5,62 +5,47 @@
 
 <h1>Edit</h1>
 
-@using (Html.BeginForm())
-{
-    <div class="form-horizontal">
-        <h4>Profile</h4>
-        <hr />
-        @Html.HiddenFor(model => model.Id)
-
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-            @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Date_Of_Birth, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-            @Html.LabelFor(model => model.Date_Of_Birth, htmlAttributes: new { @class = "control-label col-md-2" })
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-            @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-2" })
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </div>
+<form class="form-row" asp-action="Edit" asp-controller="Profile">
+    <!--First Name input -->
+    <div class="form-outline w-50">
+        <input cols="5" type="text" class="form-control" asp-for="Name" value="@Model.Name"/>
+        <label class="form-label" asp-for="Name">First Name</label>
     </div>
-}
+
+    <!-- Last Name input -->
+    <div class="form-outline w-50">
+        <input type="text" class="form-control" asp-for="Surname" value="@Model.Surname"/>
+        <label class="form-label" asp-for="Surname">Last Name</label>
+    </div>
+
+    <!-- Date of Birth input -->
+    <div class="form-outline w-50">
+        <input type="date" class="form-control" asp-for="Date_Of_Birth" value="@Model.Date_Of_Birth"/>
+        <label class="form-label" asp-for="Date_Of_Birth">Date of Birth</label>
+    </div>
+
+    <!-- Age input -->
+    <div class="form-outline w-50">
+        <input type="number" class="form-control" asp-for="Age" value="@Model.Age" />
+        <label class="form-label" asp-for="Age">Age</label>
+    </div>
+
+    <!-- City input -->
+    <div class="form-outline w-50">
+        <input type="text" class="form-control" asp-for="City" value="@Model.Age"/>
+        <label class="form-label" asp-for="City">City</label>
+    </div>
+
+    <!-- Country input -->
+    <div class="form-outline w-50">
+        <input type="text" class="form-control" asp-for="Country" value="@Model.Country"/>
+        <label class="form-label" asp-for="Country">Country</label>
+    </div>
+
+    <!-- Submit button -->
+    <input type="submit" class="btn btn-primary btn-block mb-4" value="Save">
+</form>
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")
