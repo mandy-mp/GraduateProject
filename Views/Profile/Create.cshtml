@@ -1,0 +1,48 @@
+﻿@model GraduateProject.Models.Profile
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Add New Profile</h2>
+
+<form class="form-row" asp-action="Create" asp-controller="Profile">
+    <!--First Name input -->
+    <div class="form-outline w-50">
+        <input cols="5" type="text" class="form-control" asp-for="Name"/>
+        <label class="form-label" asp-for="Name">First Name</label>
+    </div>
+
+    <!-- Last Name input -->
+    <div class="form-outline w-50">
+        <input type="text" class="form-control" asp-for="Surname"/>
+        <label class="form-label" asp-for="Surname">Last Name</label> 
+    </div>
+
+    <!-- Date of Birth input -->
+    <div class="form-outline w-50">
+        <input type="date" class="form-control" asp-for="Date_Of_Birth" />
+        <label class="form-label" asp-for="Date_Of_Birth">Date of Birth</label>
+    </div>
+
+    <!-- Age input -->
+    <div class="form-outline w-50">
+        <input type="number" class="form-control" asp-for="Age" />
+        <label class="form-label" asp-for="Age">Age</label>
+    </div>
+
+    <!-- City input -->
+    <div class="form-outline w-50">
+        <input type="text" class="form-control" asp-for="City" />
+        <label class="form-label" asp-for="City">City</label>
+    </div>
+
+    <!-- Country input -->
+    <div class="form-outline w-50">
+        <input type="text" class="form-control" asp-for="Country" />
+        <label class="form-label" asp-for="Country">Country</label>
+    </div>
+   
+    <!-- Submit button -->
+    <input type="submit" class="btn btn-primary btn-block mb-4">
+</form>
