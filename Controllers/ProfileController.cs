@@ -53,8 +53,7 @@ namespace GraduateProject.Controllers
             else
             {
                 return RedirectToAction("Index");
-            }
-               
+            }      
         }
 
         [HttpPost]
@@ -71,8 +70,7 @@ namespace GraduateProject.Controllers
                 catch
                 {
                     return View() ;
-                }
-               
+                } 
             }
             else
             {
@@ -95,15 +93,11 @@ namespace GraduateProject.Controllers
                 {
                     return View();
                 }
-               
             }
             else
             { 
                 return View(); 
-            }
-           
+            }  
         }
-
-
     }
 }
