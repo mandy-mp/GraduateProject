@@ -20,7 +20,7 @@
 
     <!-- Date of Birth input -->
     <div class="form-outline w-50">
-        <input type="date" class="form-control" asp-for="Date_Of_Birth" value="@Model.Date_Of_Birth"/>
+        <input type="text" class="form-control" asp-for="Date_Of_Birth" value="@Model.Date_Of_Birth.ToString("yyyy/MM/dd")" />
         <label class="form-label" asp-for="Date_Of_Birth">Date of Birth</label>
     </div>
 
@@ -32,7 +32,7 @@
 
     <!-- City input -->
     <div class="form-outline w-50">
-        <input type="text" class="form-control" asp-for="City" value="@Model.Age"/>
+        <input type="text" class="form-control" asp-for="City" value="@Model.City"/>
         <label class="form-label" asp-for="City">City</label>
     </div>
 
