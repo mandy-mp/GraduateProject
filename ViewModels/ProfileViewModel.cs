@@ -9,12 +9,14 @@ namespace GraduateProject.Models
 
         public string? Surname { get; set; }
 
-        public string? DOB { get; set; }
+        public DateOnly DOB { get; set; }
 
         public int Age { get; set; }
 
         public string? Country { get; set; }
 
         public string? City { get; set; }
+
+        public int Id { get; set; }
     }
 }

@@ -1,32 +1,41 @@
-﻿@model ProfileViewModel
+﻿@model IEnumerable<GraduateProject.Models.Profile>
 @{
     ViewData["Title"] = "Profile";
 }
 
 <h2>Profile Details</h2>
-    <table class="table table-striped">
-    <tr>
-        <th>Name:</th> 
-        <td><code>@Model.Name</code></td>
-    </tr>
-    <tr>
-        <th>Surname:</th>
-        <td><code>@Model.Surname</code></td>
-   
-    <tr>
-        <th>DOB:</th> 
-        <td><code>@Model.DOB</code></td>
-    </tr>
-    <tr>
-        <th>Age:</th> 
-        <td><code>@Model.Age</code></td>
-    </tr>
-    <tr>
-        <th>Country:</th> 
-        <td><code>@Model.Country</code></td>
-    </tr>
-    <tr>
-        <th>City:</th> 
-        <td><code>@Model.City</code></td>
-    </tr>
+
+<a class="btn btn-primary btn-block" asp-action="Create">Create New</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Country</th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+    @foreach (var profile in Model)
+        {
+        <tr>
+            <td>@profile.Name</td>
+            <td>@profile.Surname</td>
+                <td>@profile.Date_Of_Birth.ToString("yyyy/MM/dd")</td>
+            <td>@profile.Age</td>
+            <td>@profile.City</td>
+            <td>@profile.Country</td>
+                <td><a asp-action="Edit" asp-controller="Profile" asp-route-id="@profile.Id">edit</a></td>
+                <td><a asp-action="Delete" asp-controller="Profile" asp-route-id="@profile.Id">delete</a></td>
+        </tr>
+    }
+    </tbody>
 </table>
+
+
+
